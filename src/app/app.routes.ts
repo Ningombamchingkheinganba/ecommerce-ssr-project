@@ -5,20 +5,17 @@ import { RegisterComponent } from './register/register.component';
 
 export const routes: Routes = [
     {
-        path: "",
-        component: HomeComponent
+      path: 'admin',
+      loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
     },
     {
-        path: "login",
-        component: LoginComponent
+      path: '',
+      loadChildren: () => import('./user/user.module').then(m => m.UserModule)
     },
-    {
-        path: "register",
-        component: RegisterComponent
-    },
-    {
-        path: "",
-        redirectTo: "/home",
-        pathMatch: "full",
-    },
-];
+    // {
+    //   path: 'auth',
+    // //   loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+    // },
+    { path: '**', redirectTo: '' }
+  ];
+  
