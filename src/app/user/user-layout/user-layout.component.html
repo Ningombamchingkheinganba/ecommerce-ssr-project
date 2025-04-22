@@ -1,1 +1,24 @@
-<p>user-layout works!</p>
+<!-- src/app/user/user-layout/user-layout.component.html -->
+
+<!-- Navbar -->
+<header
+class="flex items-center px-4 h-16 bg-gray-100 border-b border-gray-300"
+>
+<div class="text-lg font-semibold">My Logo</div>
+<div class="flex-1"></div>
+<button mat-icon-button aria-label="Notifications" class="ml-2">
+  <mat-icon>notifications</mat-icon>
+</button>
+<button mat-icon-button aria-label="User Profile" class="ml-2">
+  <mat-icon>account_circle</mat-icon>
+</button>
+</header>
+
+
+<!-- Main content -->
+<main class="min-h-[80vh] p-4 bg-white">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Footer -->
+<app-footer></app-footer>

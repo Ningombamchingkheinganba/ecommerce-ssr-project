@@ -1,1 +1,54 @@
-<p>admin-layout works!</p>
+<!-- src/app/admin/admin-layout/admin-layout.component.html -->
+<header
+class="flex items-center px-4 h-16 bg-gray-100 border-b border-gray-300"
+>
+<div class="text-lg font-semibold">My Logo</div>
+<div class="flex-1"></div>
+<button mat-icon-button aria-label="Notifications" class="ml-2">
+  <mat-icon>notifications</mat-icon>
+</button>
+<button mat-icon-button aria-label="User Profile" class="ml-2">
+  <mat-icon>account_circle</mat-icon>
+</button>
+</header>
+
+
+<div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-800 text-white p-4">
+      <h2 class="text-xl font-bold mb-4">Admin Panel</h2>
+      <nav>
+        <a 
+          routerLink="/admin/dashboard"
+          routerLinkActive="active-link"
+          class="block py-2 hover:text-yellow-400 cursor-pointer"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Dashboard
+        </a>
+      
+        <a 
+          routerLink="/admin/users"
+          routerLinkActive="active-link"
+          class="block py-2 hover:text-yellow-400 cursor-pointer"
+        >
+          Users
+        </a>
+      
+        <a 
+          routerLink="/admin/products"
+          routerLinkActive="active-link"
+          class="block py-2 hover:text-yellow-400 cursor-pointer"
+        >
+          Products
+        </a>
+      </nav>
+      
+    </aside>
+  
+    <!-- Main content -->
+    <div class="flex-1 bg-gray-100 p-6">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  
